@@ -2,7 +2,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:DwaWidoki.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="DwaWidoki.Views.Widok1">
-    Welcome to Avalonia!
+             x:Class="DwaWidoki.Views.Widok1"
+             x:DataType="vm:MainWindowViewModel">
+    
+    <UserControl.Resources>
+        <vm:DoubleToIntConverter x:Key="DoubleToIntConverter" />
+    </UserControl.Resources>
+    
+    <StackPanel>
+        <Label Margin="10">Tekst w widoku 1</Label>
+        <Button Margin="10" Command="{Binding OnClick1}">Idź do widoku 2</Button>
+        <TextBlock Margin="10" Text="{Binding #slider.Value}"/>
+        <Slider x:Name="slider" Width="200" Maximum="100" Margin="10"
+                HorizontalAlignment="Left"
+                TickFrequency="1" 
+                IsSnapToTickEnabled="True"
+                Value="{Binding Number,
+                Converter={StaticResource DoubleToIntConverter},
+                Mode=TwoWay}"/>
+        <Button Margin="10" Command="{Binding Zapisz}">
+            Dołącz liczbę do kolekcji
+        </Button>
+    </StackPanel> 
 </UserControl>

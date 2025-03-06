@@ -4,6 +4,8 @@
     <option name="projectPerEditor">
       <map>
         <entry key="DwaWidoki/Views/MainWindow.axaml" value="DwaWidoki/DwaWidoki.csproj" />
+        <entry key="DwaWidoki/Views/Widok1.axaml" value="DwaWidoki/DwaWidoki.csproj" />
+        <entry key="DwaWidoki/Views/Widok2.axaml" value="DwaWidoki/DwaWidoki.csproj" />
       </map>
     </option>
   </component>

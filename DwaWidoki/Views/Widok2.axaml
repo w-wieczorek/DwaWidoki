@@ -2,7 +2,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:DwaWidoki.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="DwaWidoki.Views.Widok2">
-    Welcome to Avalonia!
+             x:Class="DwaWidoki.Views.Widok2"
+             x:DataType="vm:MainWindowViewModel">
+    <StackPanel>
+        <Label Margin="10">Tekst w widoku 2</Label>
+        <Button Margin="10" Command="{Binding OnClick2}">Idź do widoku 1</Button>
+        <TextBox Margin="10" Width="100"
+                 HorizontalAlignment="Left"
+                 Text="{Binding Number, Mode=TwoWay}"/>
+        <Button Margin="10" Command="{Binding Zapisz}">
+            Dołącz liczbę do kolekcji
+        </Button>
+    </StackPanel> 
+
 </UserControl>
